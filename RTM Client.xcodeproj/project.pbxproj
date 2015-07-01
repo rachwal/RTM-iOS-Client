@@ -1,0 +1,739 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		870A26E41B42812E006881DC /* RTM_Client.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 870A26E21B42812E006881DC /* RTM_Client.xcdatamodeld */; };
+		870A26FA1B42812E006881DC /* RTM_ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A26F91B42812E006881DC /* RTM_ClientTests.swift */; };
+		870A27051B428347006881DC /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A27041B428347006881DC /* ApplicationAssembly.swift */; };
+		870A27071B42837E006881DC /* CoreComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A27061B42837E006881DC /* CoreComponents.swift */; };
+		870A270B1B4283CF006881DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 870A270A1B4283CF006881DC /* Images.xcassets */; };
+		870A27101B428415006881DC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A270F1B428415006881DC /* SettingsViewController.swift */; };
+		870A27181B4284CC006881DC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A27161B4284CC006881DC /* CameraViewController.swift */; };
+		870A27191B4284CC006881DC /* SessionPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A27171B4284CC006881DC /* SessionPreviewView.swift */; };
+		870A271C1B428520006881DC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870A271B1B428520006881DC /* LaunchScreen.xib */; };
+		870A271F1B428575006881DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A271E1B428575006881DC /* AppDelegate.swift */; };
+		870A27211B42857C006881DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870A27201B42857C006881DC /* Main.storyboard */; };
+		870A27251B4285EC006881DC /* Persistency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A27241B4285EC006881DC /* Persistency.swift */; };
+		87FC5AA81B435F620056F7CB /* RTMPersistency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5AA71B435F620056F7CB /* RTMPersistency.swift */; };
+		87FC5AAB1B43608B0056F7CB /* RTMClientConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5AAA1B43608B0056F7CB /* RTMClientConfiguration.swift */; };
+		87FC5AAD1B4360B70056F7CB /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5AAC1B4360B70056F7CB /* Configuration.swift */; };
+		87FC5AB01B4360E70056F7CB /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5AAF1B4360E70056F7CB /* Camera.swift */; };
+		87FC5AB21B43610A0056F7CB /* RTMCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5AB11B43610A0056F7CB /* RTMCamera.swift */; };
+		87FC5AB51B43613E0056F7CB /* WebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5AB41B43613E0056F7CB /* WebClient.swift */; };
+		87FC5AB71B43615E0056F7CB /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5AB61B43615E0056F7CB /* Session.swift */; };
+		87FC5AB91B43617B0056F7CB /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5AB81B43617B0056F7CB /* RequestFactory.swift */; };
+		87FC5ABB1B4361990056F7CB /* RTMRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5ABA1B4361990056F7CB /* RTMRequestFactory.swift */; };
+		87FC5ABE1B4361DD0056F7CB /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5ABD1B4361DD0056F7CB /* ApiClient.swift */; };
+		87FC5AC01B4362020056F7CB /* RTMApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5ABF1B4362020056F7CB /* RTMApiClient.swift */; };
+		87FC5AC41B4378F80056F7CB /* ImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5AC31B4378F80056F7CB /* ImageFactory.swift */; };
+		87FC5AC61B43792B0056F7CB /* ImageEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5AC51B43792B0056F7CB /* ImageEncoder.swift */; };
+		9779274745319DACA3A369E0 /* Pods_RTM_ClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518913C854F3F80FEF8F0CF2 /* Pods_RTM_ClientTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D0192F07F45B96C709BCFAF3 /* Pods_RTM_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06018F07985FC7C207374B57 /* Pods_RTM_Client.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		870A26F41B42812E006881DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 870A26D31B42812E006881DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 870A26DA1B42812E006881DC;
+			remoteInfo = "RTM Client";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06018F07985FC7C207374B57 /* Pods_RTM_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RTM_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		518913C854F3F80FEF8F0CF2 /* Pods_RTM_ClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RTM_ClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E63427B1D75361FD75C7AB5 /* Pods-RTM Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTM Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-RTM Client/Pods-RTM Client.release.xcconfig"; sourceTree = "<group>"; };
+		7A850FCEA6F6C047424BF2BF /* Pods-RTM ClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTM ClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RTM ClientTests/Pods-RTM ClientTests.release.xcconfig"; sourceTree = "<group>"; };
+		870A26DB1B42812E006881DC /* RTM Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RTM Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		870A26DF1B42812E006881DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		870A26E31B42812E006881DC /* RTM_Client.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RTM_Client.xcdatamodel; sourceTree = "<group>"; };
+		870A26F31B42812E006881DC /* RTM ClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RTM ClientTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		870A26F81B42812E006881DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		870A26F91B42812E006881DC /* RTM_ClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTM_ClientTests.swift; sourceTree = "<group>"; };
+		870A27041B428347006881DC /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationAssembly.swift; path = Assembly/ApplicationAssembly.swift; sourceTree = "<group>"; };
+		870A27061B42837E006881DC /* CoreComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreComponents.swift; path = Assembly/CoreComponents.swift; sourceTree = "<group>"; };
+		870A270A1B4283CF006881DC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		870A270F1B428415006881DC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = UserInterface/Settings/SettingsViewController.swift; sourceTree = "<group>"; };
+		870A27161B4284CC006881DC /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = UserInterface/Camera/CameraViewController.swift; sourceTree = "<group>"; };
+		870A27171B4284CC006881DC /* SessionPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionPreviewView.swift; path = UserInterface/Camera/SessionPreviewView.swift; sourceTree = "<group>"; };
+		870A271B1B428520006881DC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		870A271E1B428575006881DC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		870A27201B42857C006881DC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		870A27241B4285EC006881DC /* Persistency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Persistency.swift; path = BusinessLogic/Persistency/Persistency.swift; sourceTree = "<group>"; };
+		87FC5AA71B435F620056F7CB /* RTMPersistency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTMPersistency.swift; path = BusinessLogic/Persistency/RTMPersistency.swift; sourceTree = "<group>"; };
+		87FC5AAA1B43608B0056F7CB /* RTMClientConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTMClientConfiguration.swift; path = BusinessLogic/Configuration/RTMClientConfiguration.swift; sourceTree = "<group>"; };
+		87FC5AAC1B4360B70056F7CB /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = BusinessLogic/Configuration/Configuration.swift; sourceTree = "<group>"; };
+		87FC5AAF1B4360E70056F7CB /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Camera.swift; path = BusinessLogic/Camera/Camera.swift; sourceTree = "<group>"; };
+		87FC5AB11B43610A0056F7CB /* RTMCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTMCamera.swift; path = BusinessLogic/Camera/RTMCamera.swift; sourceTree = "<group>"; };
+		87FC5AB41B43613E0056F7CB /* WebClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebClient.swift; path = BusinessLogic/WebClient/WebClient.swift; sourceTree = "<group>"; };
+		87FC5AB61B43615E0056F7CB /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = BusinessLogic/WebClient/Session.swift; sourceTree = "<group>"; };
+		87FC5AB81B43617B0056F7CB /* RequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestFactory.swift; path = BusinessLogic/WebClient/RequestFactory.swift; sourceTree = "<group>"; };
+		87FC5ABA1B4361990056F7CB /* RTMRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTMRequestFactory.swift; path = BusinessLogic/WebClient/RTMRequestFactory.swift; sourceTree = "<group>"; };
+		87FC5ABD1B4361DD0056F7CB /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiClient.swift; path = BusinessLogic/ApiClient/ApiClient.swift; sourceTree = "<group>"; };
+		87FC5ABF1B4362020056F7CB /* RTMApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTMApiClient.swift; path = BusinessLogic/ApiClient/RTMApiClient.swift; sourceTree = "<group>"; };
+		87FC5AC31B4378F80056F7CB /* ImageFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageFactory.swift; path = BusinessLogic/Camera/ImageFactory.swift; sourceTree = "<group>"; };
+		87FC5AC51B43792B0056F7CB /* ImageEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageEncoder.swift; path = BusinessLogic/Camera/ImageEncoder.swift; sourceTree = "<group>"; };
+		E2590B319377484A63EBB96B /* Pods-RTM Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTM Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RTM Client/Pods-RTM Client.debug.xcconfig"; sourceTree = "<group>"; };
+		ED01BA7A3D1FD80B1F17F789 /* Pods-RTM ClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTM ClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RTM ClientTests/Pods-RTM ClientTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		870A26D81B42812E006881DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0192F07F45B96C709BCFAF3 /* Pods_RTM_Client.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		870A26F01B42812E006881DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9779274745319DACA3A369E0 /* Pods_RTM_ClientTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66D59CD96FDE75F9E9DB9EE8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2590B319377484A63EBB96B /* Pods-RTM Client.debug.xcconfig */,
+				5E63427B1D75361FD75C7AB5 /* Pods-RTM Client.release.xcconfig */,
+				ED01BA7A3D1FD80B1F17F789 /* Pods-RTM ClientTests.debug.xcconfig */,
+				7A850FCEA6F6C047424BF2BF /* Pods-RTM ClientTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		870A26D21B42812E006881DC = {
+			isa = PBXGroup;
+			children = (
+				870A26DD1B42812E006881DC /* RTM Client */,
+				870A26F61B42812E006881DC /* RTM ClientTests */,
+				870A26DC1B42812E006881DC /* Products */,
+				66D59CD96FDE75F9E9DB9EE8 /* Pods */,
+				D5DA0DE69EF1FCF899528FFD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		870A26DC1B42812E006881DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				870A26DB1B42812E006881DC /* RTM Client.app */,
+				870A26F31B42812E006881DC /* RTM ClientTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		870A26DD1B42812E006881DC /* RTM Client */ = {
+			isa = PBXGroup;
+			children = (
+				870A27221B4285AC006881DC /* Business Logic */,
+				870A27081B428393006881DC /* User Interface */,
+			);
+			path = "RTM Client";
+			sourceTree = "<group>";
+		};
+		870A26DE1B42812E006881DC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				870A26DF1B42812E006881DC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		870A26F61B42812E006881DC /* RTM ClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				870A26F91B42812E006881DC /* RTM_ClientTests.swift */,
+				870A26F71B42812E006881DC /* Supporting Files */,
+			);
+			path = "RTM ClientTests";
+			sourceTree = "<group>";
+		};
+		870A26F71B42812E006881DC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				870A26F81B42812E006881DC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		870A27031B42831F006881DC /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				870A27041B428347006881DC /* ApplicationAssembly.swift */,
+				870A27061B42837E006881DC /* CoreComponents.swift */,
+			);
+			name = Assembly;
+			sourceTree = "<group>";
+		};
+		870A27081B428393006881DC /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				870A271D1B428565006881DC /* Main */,
+				870A27111B42842D006881DC /* Camera */,
+				870A270E1B4283ED006881DC /* Settings */,
+				870A271A1B428505006881DC /* Launch Screen */,
+				870A27091B4283A6006881DC /* Resources */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		870A27091B4283A6006881DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				870A270A1B4283CF006881DC /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		870A270E1B4283ED006881DC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				870A270F1B428415006881DC /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		870A27111B42842D006881DC /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				870A27161B4284CC006881DC /* CameraViewController.swift */,
+				870A27171B4284CC006881DC /* SessionPreviewView.swift */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		870A271A1B428505006881DC /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				870A271B1B428520006881DC /* LaunchScreen.xib */,
+			);
+			name = "Launch Screen";
+			sourceTree = "<group>";
+		};
+		870A271D1B428565006881DC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				870A27201B42857C006881DC /* Main.storyboard */,
+				870A271E1B428575006881DC /* AppDelegate.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		870A27221B4285AC006881DC /* Business Logic */ = {
+			isa = PBXGroup;
+			children = (
+				870A27031B42831F006881DC /* Assembly */,
+				870A27231B4285B7006881DC /* Persistency */,
+				87FC5AA91B435F730056F7CB /* Configuration */,
+				87FC5AB31B43611E0056F7CB /* WebClient */,
+				87FC5ABC1B4361A40056F7CB /* ApiClient */,
+				87FC5AAE1B4360CE0056F7CB /* Camera */,
+				870A26E21B42812E006881DC /* RTM_Client.xcdatamodeld */,
+			);
+			name = "Business Logic";
+			sourceTree = "<group>";
+		};
+		870A27231B4285B7006881DC /* Persistency */ = {
+			isa = PBXGroup;
+			children = (
+				870A27241B4285EC006881DC /* Persistency.swift */,
+				87FC5AA71B435F620056F7CB /* RTMPersistency.swift */,
+			);
+			name = Persistency;
+			sourceTree = "<group>";
+		};
+		87FC5AA91B435F730056F7CB /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				87FC5AAC1B4360B70056F7CB /* Configuration.swift */,
+				87FC5AAA1B43608B0056F7CB /* RTMClientConfiguration.swift */,
+				870A26DE1B42812E006881DC /* Supporting Files */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		87FC5AAE1B4360CE0056F7CB /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				87FC5AAF1B4360E70056F7CB /* Camera.swift */,
+				87FC5AB11B43610A0056F7CB /* RTMCamera.swift */,
+				87FC5AC51B43792B0056F7CB /* ImageEncoder.swift */,
+				87FC5AC31B4378F80056F7CB /* ImageFactory.swift */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		87FC5AB31B43611E0056F7CB /* WebClient */ = {
+			isa = PBXGroup;
+			children = (
+				87FC5AB41B43613E0056F7CB /* WebClient.swift */,
+				87FC5AB61B43615E0056F7CB /* Session.swift */,
+				87FC5AB81B43617B0056F7CB /* RequestFactory.swift */,
+				87FC5ABA1B4361990056F7CB /* RTMRequestFactory.swift */,
+			);
+			name = WebClient;
+			sourceTree = "<group>";
+		};
+		87FC5ABC1B4361A40056F7CB /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				87FC5ABD1B4361DD0056F7CB /* ApiClient.swift */,
+				87FC5ABF1B4362020056F7CB /* RTMApiClient.swift */,
+			);
+			name = ApiClient;
+			sourceTree = "<group>";
+		};
+		D5DA0DE69EF1FCF899528FFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06018F07985FC7C207374B57 /* Pods_RTM_Client.framework */,
+				518913C854F3F80FEF8F0CF2 /* Pods_RTM_ClientTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		870A26DA1B42812E006881DC /* RTM Client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 870A26FD1B42812E006881DC /* Build configuration list for PBXNativeTarget "RTM Client" */;
+			buildPhases = (
+				3D5B7D4225563154A50F6D73 /* Check Pods Manifest.lock */,
+				870A26D71B42812E006881DC /* Sources */,
+				870A26D81B42812E006881DC /* Frameworks */,
+				870A26D91B42812E006881DC /* Resources */,
+				041749ADB6235252BA308D49 /* Embed Pods Frameworks */,
+				545DD78BDC0AF6074002A53C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RTM Client";
+			productName = "RTM Client";
+			productReference = 870A26DB1B42812E006881DC /* RTM Client.app */;
+			productType = "com.apple.product-type.application";
+		};
+		870A26F21B42812E006881DC /* RTM ClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 870A27001B42812E006881DC /* Build configuration list for PBXNativeTarget "RTM ClientTests" */;
+			buildPhases = (
+				7A50A388C7179BDE146A008C /* Check Pods Manifest.lock */,
+				870A26EF1B42812E006881DC /* Sources */,
+				870A26F01B42812E006881DC /* Frameworks */,
+				870A26F11B42812E006881DC /* Resources */,
+				568ED6C9FE9492D9362048ED /* Embed Pods Frameworks */,
+				D007C86C995586E2861286B9 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				870A26F51B42812E006881DC /* PBXTargetDependency */,
+			);
+			name = "RTM ClientTests";
+			productName = "RTM ClientTests";
+			productReference = 870A26F31B42812E006881DC /* RTM ClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		870A26D31B42812E006881DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "The National Institute of Advanced Industrial Science and Technology, Japan.";
+				TargetAttributes = {
+					870A26DA1B42812E006881DC = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					870A26F21B42812E006881DC = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 870A26DA1B42812E006881DC;
+					};
+				};
+			};
+			buildConfigurationList = 870A26D61B42812E006881DC /* Build configuration list for PBXProject "RTM Client" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 870A26D21B42812E006881DC;
+			productRefGroup = 870A26DC1B42812E006881DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				870A26DA1B42812E006881DC /* RTM Client */,
+				870A26F21B42812E006881DC /* RTM ClientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		870A26D91B42812E006881DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				870A271C1B428520006881DC /* LaunchScreen.xib in Resources */,
+				870A270B1B4283CF006881DC /* Images.xcassets in Resources */,
+				870A27211B42857C006881DC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		870A26F11B42812E006881DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		041749ADB6235252BA308D49 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RTM Client/Pods-RTM Client-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D5B7D4225563154A50F6D73 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		545DD78BDC0AF6074002A53C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RTM Client/Pods-RTM Client-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		568ED6C9FE9492D9362048ED /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RTM ClientTests/Pods-RTM ClientTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A50A388C7179BDE146A008C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D007C86C995586E2861286B9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RTM ClientTests/Pods-RTM ClientTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		870A26D71B42812E006881DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87FC5ABB1B4361990056F7CB /* RTMRequestFactory.swift in Sources */,
+				87FC5AB91B43617B0056F7CB /* RequestFactory.swift in Sources */,
+				870A26E41B42812E006881DC /* RTM_Client.xcdatamodeld in Sources */,
+				87FC5AAB1B43608B0056F7CB /* RTMClientConfiguration.swift in Sources */,
+				870A27051B428347006881DC /* ApplicationAssembly.swift in Sources */,
+				870A27071B42837E006881DC /* CoreComponents.swift in Sources */,
+				87FC5AC61B43792B0056F7CB /* ImageEncoder.swift in Sources */,
+				870A27191B4284CC006881DC /* SessionPreviewView.swift in Sources */,
+				87FC5AB71B43615E0056F7CB /* Session.swift in Sources */,
+				870A271F1B428575006881DC /* AppDelegate.swift in Sources */,
+				870A27251B4285EC006881DC /* Persistency.swift in Sources */,
+				87FC5AB21B43610A0056F7CB /* RTMCamera.swift in Sources */,
+				87FC5ABE1B4361DD0056F7CB /* ApiClient.swift in Sources */,
+				870A27101B428415006881DC /* SettingsViewController.swift in Sources */,
+				87FC5AC01B4362020056F7CB /* RTMApiClient.swift in Sources */,
+				87FC5AC41B4378F80056F7CB /* ImageFactory.swift in Sources */,
+				87FC5AB01B4360E70056F7CB /* Camera.swift in Sources */,
+				870A27181B4284CC006881DC /* CameraViewController.swift in Sources */,
+				87FC5AB51B43613E0056F7CB /* WebClient.swift in Sources */,
+				87FC5AA81B435F620056F7CB /* RTMPersistency.swift in Sources */,
+				87FC5AAD1B4360B70056F7CB /* Configuration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		870A26EF1B42812E006881DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				870A26FA1B42812E006881DC /* RTM_ClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		870A26F51B42812E006881DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 870A26DA1B42812E006881DC /* RTM Client */;
+			targetProxy = 870A26F41B42812E006881DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		870A26FB1B42812E006881DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		870A26FC1B42812E006881DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		870A26FE1B42812E006881DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2590B319377484A63EBB96B /* Pods-RTM Client.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "RTM Client/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		870A26FF1B42812E006881DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E63427B1D75361FD75C7AB5 /* Pods-RTM Client.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "RTM Client/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		870A27011B42812E006881DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED01BA7A3D1FD80B1F17F789 /* Pods-RTM ClientTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RTM ClientTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RTM Client.app/RTM Client";
+			};
+			name = Debug;
+		};
+		870A27021B42812E006881DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A850FCEA6F6C047424BF2BF /* Pods-RTM ClientTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RTM ClientTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RTM Client.app/RTM Client";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		870A26D61B42812E006881DC /* Build configuration list for PBXProject "RTM Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				870A26FB1B42812E006881DC /* Debug */,
+				870A26FC1B42812E006881DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		870A26FD1B42812E006881DC /* Build configuration list for PBXNativeTarget "RTM Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				870A26FE1B42812E006881DC /* Debug */,
+				870A26FF1B42812E006881DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		870A27001B42812E006881DC /* Build configuration list for PBXNativeTarget "RTM ClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				870A27011B42812E006881DC /* Debug */,
+				870A27021B42812E006881DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		870A26E21B42812E006881DC /* RTM_Client.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				870A26E31B42812E006881DC /* RTM_Client.xcdatamodel */,
+			);
+			currentVersion = 870A26E31B42812E006881DC /* RTM_Client.xcdatamodel */;
+			path = RTM_Client.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 870A26D31B42812E006881DC /* Project object */;
+}

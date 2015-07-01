@@ -1,0 +1,6 @@
+framework module Pods_RTM_ClientTests {
+  umbrella header "Pods-RTM ClientTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
