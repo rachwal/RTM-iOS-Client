@@ -1,10 +1,4 @@
-//
-//  ImageEncoder.swift
-//  RTM Client
-//
-//  Created by Bartosz Rachwal on 7/1/15.
-//  Copyright (c) 2015 The National Institute of Advanced Industrial Science and Technology, Japan. All rights reserved.
-//
+//  Copyright (c) 2015-2016. Bartosz Rachwal. The National Institute of Advanced Industrial Science and Technology, Japan. All rights reserved.
 
 import UIKit
 import AVFoundation
@@ -19,9 +13,9 @@ class RTMImageEncoder: NSObject, ImageEncoder {
 
     func encode(buffer: CMSampleBuffer) -> String {
 
-        var image = factory.create(buffer)
-        var imageData = UIImageJPEGRepresentation(image, getCompression(configuration.videoQuality))
-        return imageData.base64EncodedStringWithOptions(.allZeros)
+        let image = factory.create(buffer)
+        let imageData = UIImageJPEGRepresentation(image, getCompression(configuration.videoQuality))
+        return imageData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions())
     }
 
     private func getCompression(qualityIndex: Int) -> CGFloat {

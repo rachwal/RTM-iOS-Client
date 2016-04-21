@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		870A26E41B42812E006881DC /* RTM_Client.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 870A26E21B42812E006881DC /* RTM_Client.xcdatamodeld */; };
-		870A26FA1B42812E006881DC /* RTM_ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A26F91B42812E006881DC /* RTM_ClientTests.swift */; };
 		870A27051B428347006881DC /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A27041B428347006881DC /* ApplicationAssembly.swift */; };
 		870A27071B42837E006881DC /* CoreComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A27061B42837E006881DC /* CoreComponents.swift */; };
 		870A270B1B4283CF006881DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 870A270A1B4283CF006881DC /* Images.xcassets */; };
@@ -32,19 +31,8 @@
 		87FC5AC01B4362020056F7CB /* RTMApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5ABF1B4362020056F7CB /* RTMApiClient.swift */; };
 		87FC5AC41B4378F80056F7CB /* ImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5AC31B4378F80056F7CB /* ImageFactory.swift */; };
 		87FC5AC61B43792B0056F7CB /* ImageEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FC5AC51B43792B0056F7CB /* ImageEncoder.swift */; };
-		9779274745319DACA3A369E0 /* Pods_RTM_ClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518913C854F3F80FEF8F0CF2 /* Pods_RTM_ClientTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D0192F07F45B96C709BCFAF3 /* Pods_RTM_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06018F07985FC7C207374B57 /* Pods_RTM_Client.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		870A26F41B42812E006881DC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 870A26D31B42812E006881DC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 870A26DA1B42812E006881DC;
-			remoteInfo = "RTM Client";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		06018F07985FC7C207374B57 /* Pods_RTM_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RTM_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,9 +42,6 @@
 		870A26DB1B42812E006881DC /* RTM Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RTM Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		870A26DF1B42812E006881DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		870A26E31B42812E006881DC /* RTM_Client.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RTM_Client.xcdatamodel; sourceTree = "<group>"; };
-		870A26F31B42812E006881DC /* RTM ClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RTM ClientTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		870A26F81B42812E006881DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		870A26F91B42812E006881DC /* RTM_ClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTM_ClientTests.swift; sourceTree = "<group>"; };
 		870A27041B428347006881DC /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationAssembly.swift; path = Assembly/ApplicationAssembly.swift; sourceTree = "<group>"; };
 		870A27061B42837E006881DC /* CoreComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreComponents.swift; path = Assembly/CoreComponents.swift; sourceTree = "<group>"; };
 		870A270A1B4283CF006881DC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -93,14 +78,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		870A26F01B42812E006881DC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9779274745319DACA3A369E0 /* Pods_RTM_ClientTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -119,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				870A26DD1B42812E006881DC /* RTM Client */,
-				870A26F61B42812E006881DC /* RTM ClientTests */,
 				870A26DC1B42812E006881DC /* Products */,
 				66D59CD96FDE75F9E9DB9EE8 /* Pods */,
 				D5DA0DE69EF1FCF899528FFD /* Frameworks */,
@@ -130,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				870A26DB1B42812E006881DC /* RTM Client.app */,
-				870A26F31B42812E006881DC /* RTM ClientTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,23 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				870A26DF1B42812E006881DC /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		870A26F61B42812E006881DC /* RTM ClientTests */ = {
-			isa = PBXGroup;
-			children = (
-				870A26F91B42812E006881DC /* RTM_ClientTests.swift */,
-				870A26F71B42812E006881DC /* Supporting Files */,
-			);
-			path = "RTM ClientTests";
-			sourceTree = "<group>";
-		};
-		870A26F71B42812E006881DC /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				870A26F81B42812E006881DC /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -328,42 +286,18 @@
 			productReference = 870A26DB1B42812E006881DC /* RTM Client.app */;
 			productType = "com.apple.product-type.application";
 		};
-		870A26F21B42812E006881DC /* RTM ClientTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 870A27001B42812E006881DC /* Build configuration list for PBXNativeTarget "RTM ClientTests" */;
-			buildPhases = (
-				7A50A388C7179BDE146A008C /* Check Pods Manifest.lock */,
-				870A26EF1B42812E006881DC /* Sources */,
-				870A26F01B42812E006881DC /* Frameworks */,
-				870A26F11B42812E006881DC /* Resources */,
-				568ED6C9FE9492D9362048ED /* Embed Pods Frameworks */,
-				D007C86C995586E2861286B9 /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				870A26F51B42812E006881DC /* PBXTargetDependency */,
-			);
-			name = "RTM ClientTests";
-			productName = "RTM ClientTests";
-			productReference = 870A26F31B42812E006881DC /* RTM ClientTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		870A26D31B42812E006881DC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "The National Institute of Advanced Industrial Science and Technology, Japan.";
 				TargetAttributes = {
 					870A26DA1B42812E006881DC = {
 						CreatedOnToolsVersion = 6.3.2;
-					};
-					870A26F21B42812E006881DC = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = 870A26DA1B42812E006881DC;
 					};
 				};
 			};
@@ -381,7 +315,6 @@
 			projectRoot = "";
 			targets = (
 				870A26DA1B42812E006881DC /* RTM Client */,
-				870A26F21B42812E006881DC /* RTM ClientTests */,
 			);
 		};
 /* End PBXProject section */
@@ -394,13 +327,6 @@
 				870A271C1B428520006881DC /* LaunchScreen.xib in Resources */,
 				870A270B1B4283CF006881DC /* Images.xcassets in Resources */,
 				870A27211B42857C006881DC /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		870A26F11B42812E006881DC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,51 +378,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RTM Client/Pods-RTM Client-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		568ED6C9FE9492D9362048ED /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RTM ClientTests/Pods-RTM ClientTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7A50A388C7179BDE146A008C /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D007C86C995586E2861286B9 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RTM ClientTests/Pods-RTM ClientTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -528,23 +409,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		870A26EF1B42812E006881DC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				870A26FA1B42812E006881DC /* RTM_ClientTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		870A26F51B42812E006881DC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 870A26DA1B42812E006881DC /* RTM Client */;
-			targetProxy = 870A26F41B42812E006881DC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		870A26FB1B42812E006881DC /* Debug */ = {
@@ -568,6 +433,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -637,6 +503,7 @@
 				INFOPLIST_FILE = "RTM Client/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AIST.RTMiddleware-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -650,43 +517,8 @@
 				INFOPLIST_FILE = "RTM Client/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AIST.RTMiddleware-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		870A27011B42812E006881DC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED01BA7A3D1FD80B1F17F789 /* Pods-RTM ClientTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "RTM ClientTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RTM Client.app/RTM Client";
-			};
-			name = Debug;
-		};
-		870A27021B42812E006881DC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A850FCEA6F6C047424BF2BF /* Pods-RTM ClientTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "RTM ClientTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RTM Client.app/RTM Client";
 			};
 			name = Release;
 		};
@@ -707,15 +539,6 @@
 			buildConfigurations = (
 				870A26FE1B42812E006881DC /* Debug */,
 				870A26FF1B42812E006881DC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		870A27001B42812E006881DC /* Build configuration list for PBXNativeTarget "RTM ClientTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				870A27011B42812E006881DC /* Debug */,
-				870A27021B42812E006881DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

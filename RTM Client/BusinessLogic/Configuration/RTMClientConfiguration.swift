@@ -1,10 +1,4 @@
-//
-//  RTMClientConfiguration.swift
-//  RTM Client
-//
-//  Created by Bartosz Rachwal on 7/1/15.
-//  Copyright (c) 2015 The National Institute of Advanced Industrial Science and Technology, Japan. All rights reserved.
-//
+//  Copyright (c) 2015-2016. Bartosz Rachwal. The National Institute of Advanced Industrial Science and Technology, Japan. All rights reserved.
 
 import AVFoundation
 import CoreData
@@ -150,9 +144,13 @@ public class RTMClientConfiguration: NSObject, Configuration {
                 selected.setValue(NSNumber(integer: devicePosition.rawValue), forKey: attribute)
             }
 
-            var error: NSError?
-            if !managedContext.save(&error) {
-                println(error?.userInfo)
+            do
+            {
+                try managedContext.save()
+            }
+            catch
+            {
+                print("RTMClientConfiguration::setSerializedValue::managedContext.save()")
             }
         }
     }
@@ -160,17 +158,26 @@ public class RTMClientConfiguration: NSObject, Configuration {
     private func removeSerializedValue(entity: String) {
         if let managedContext = persistency.context {
             let request = NSFetchRequest(entityName: entity)
-
-            var error: NSError?
-
-            if let results = managedContext.executeFetchRequest(request, error: &error) {
-                for (var i = 0; i < results.count; i++) {
+ 
+            do
+            {
+                let results = try managedContext.executeFetchRequest(request)
+                for i in 0..<results.count {
                     managedContext.deleteObject(results[i] as! NSManagedObject)
                 }
             }
-
-            if !managedContext.save(&error) {
-                println(error?.userInfo)
+            catch
+            {
+                print("RTMClientConfiguration::removeSerializedValue::executeFetchRequest()")
+            }
+           
+            do
+            {
+                try managedContext.save()
+            }
+            catch
+            {
+                print("RTMClientConfiguration::removeSerializedValue::managedContext.save()")
             }
         }
     }

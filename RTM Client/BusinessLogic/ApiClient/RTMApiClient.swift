@@ -1,10 +1,4 @@
-//
-//  RTMApiClient.swift
-//  RTM Client
-//
-//  Created by Bartosz Rachwal on 7/1/15.
-//  Copyright (c) 2015 The National Institute of Advanced Industrial Science and Technology, Japan. All rights reserved.
-//
+//  Copyright (c) 2015-2016. Bartosz Rachwal. The National Institute of Advanced Industrial Science and Technology, Japan. All rights reserved.
 
 import Foundation
 
@@ -22,16 +16,18 @@ class RTMApiClient: NSObject, ApiClient {
             client.send(request, timeout: 2.0, callback: {
                 result, error in
                 if let data = result as? NSData {
-                    var parsingError: NSError? = nil
-                    let parsedResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError)
-
-                    if let error = parsingError {
-                        completion(nil)
-                    } else {
+                    do
+                    {
+                        let parsedResult: AnyObject? = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
                         if let parsedTime = parsedResult as? String {
                             completion(parsedTime)
                         }
                     }
+                    catch
+                    {
+                        completion(nil)
+                    }
+
                 } else {
                     completion(nil)
                 }

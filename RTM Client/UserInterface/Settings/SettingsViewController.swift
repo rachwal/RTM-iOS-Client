@@ -1,10 +1,4 @@
-//
-//  SettingsViewController.swift
-//  RTM Client
-//
-//  Created by Bartosz Rachwal on 7/1/15.
-//  Copyright (c) 2015 The National Institute of Advanced Industrial Science and Technology, Japan. All rights reserved.
-//
+//  Copyright (c) 2015-2016. Bartosz Rachwal. The National Institute of Advanced Industrial Science and Technology, Japan. All rights reserved.
 
 import UIKit
 import AVFoundation
@@ -35,9 +29,9 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateStreamingSwitch", name: "RTMClient.StreamingChanged", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingsViewController.keyboardDidShow(_:)), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingsViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingsViewController.updateStreamingSwitch), name: "RTMClient.StreamingChanged", object: nil)
 
         initFields()
     }
@@ -102,7 +96,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
         if sender.on {
             client.checkConnection() {
                 message in
-                if let statusOk = message {
+                if message != nil {
                     self.camera.start()
                     self.configuration.streaming = true
                 } else {
@@ -117,20 +111,20 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     private func displayNoConnectionPopup() {
         dispatch_async(dispatch_get_main_queue()) {
             self.streamingSwitch.setOn(false, animated: true)
-            var popup: UIAlertController = UIAlertController(title: "No Connection", message: "Please check WiFi status, host address and port settings.", preferredStyle: UIAlertControllerStyle.Alert)
-            var action: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            let popup: UIAlertController = UIAlertController(title: "No Connection", message: "Please check WiFi status, host address and port settings.", preferredStyle: UIAlertControllerStyle.Alert)
+            let action: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
             popup.addAction(action)
             self.presentViewController(popup, animated: true, completion: nil)
         }
     }
 
     @IBAction func hostAddressChanged(sender: UITextField) {
-        configuration.host = sender.text
+        configuration.host = sender.text!
     }
 
     @IBAction func portNumberChanged(sender: UITextField) {
         var correctValue = false
-        if let newPort = sender.text.toInt() {
+        if let newPort = Int(sender.text!) {
             if newPort > 0 && newPort < 65536 {
                 correctValue = true
                 configuration.port = newPort
@@ -138,8 +132,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
         }
         if !correctValue {
             dispatch_async(dispatch_get_main_queue()) {
-                var popup: UIAlertController = UIAlertController(title: "Incorrect value", message: "Port value should be an integer greater than than zero up to a value of 65535", preferredStyle: UIAlertControllerStyle.Alert)
-                var action: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                let popup: UIAlertController = UIAlertController(title: "Incorrect value", message: "Port value should be an integer greater than than zero up to a value of 65535", preferredStyle: UIAlertControllerStyle.Alert)
+                let action: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
                 popup.addAction(action)
                 self.presentViewController(popup, animated: true) {
                     self.portField.text = "\(self.configuration.port)"
@@ -198,8 +192,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     func keyboardDidShow(notification: NSNotification) {
 
         var info = notification.userInfo!
-        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        var contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardFrame.height + 10, 0.0)
+        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        let contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardFrame.height + 10, 0.0)
 
         tableView.contentInset = contentInsets
         tableView.scrollIndicatorInsets = contentInsets
@@ -213,7 +207,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate {
     }
 
     func keyboardWillHide(notification: NSNotification) {
-        var contentInsets = UIEdgeInsetsZero
+        let contentInsets = UIEdgeInsetsZero
         tableView.contentInset = contentInsets
         tableView.scrollIndicatorInsets = contentInsets
     }

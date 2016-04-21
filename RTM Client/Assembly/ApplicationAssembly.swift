@@ -1,10 +1,4 @@
-//
-//  ApplicationAssembly.swift
-//  RTM Client
-//
-//  Created by Bartosz Rachwal on 7/1/15.
-//  Copyright (c) 2015 The National Institute of Advanced Industrial Science and Technology, Japan. All rights reserved.
-//
+//  Copyright (c) 2015-2016. Bartosz Rachwal. The National Institute of Advanced Industrial Science and Technology, Japan. All rights reserved.
 
 import Typhoon
 
@@ -15,17 +9,17 @@ class ApplicationAssembly: TyphoonAssembly {
     dynamic func cameraViewController() -> AnyObject {
         return TyphoonDefinition.withClass(CameraViewController.self) {
             (definition) in
-            definition.injectProperty("configuration", with: self.coreComponents.configuration())
-            definition.injectProperty("camera", with: self.coreComponents.camera())
+            definition.injectProperty(#selector(CoreComponents.configuration), with: self.coreComponents.configuration())
+            definition.injectProperty(#selector(CoreComponents.camera), with: self.coreComponents.camera())
         }
     }
 
     dynamic func settingsViewController() -> AnyObject {
         return TyphoonDefinition.withClass(SettingsViewController.self) {
             (definition) in
-            definition.injectProperty("configuration", with: self.coreComponents.configuration())
-            definition.injectProperty("camera", with: self.coreComponents.camera())
-            definition.injectProperty("client", with: self.coreComponents.apiClient())
+            definition.injectProperty(#selector(CoreComponents.configuration), with: self.coreComponents.configuration())
+            definition.injectProperty(#selector(CoreComponents.camera), with: self.coreComponents.camera())
+            definition.injectProperty(Selector("client"), with: self.coreComponents.apiClient())
         }
     }
 }

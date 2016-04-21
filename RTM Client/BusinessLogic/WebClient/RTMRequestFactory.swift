@@ -1,10 +1,4 @@
-//
-//  RTMRequestFactory.swift
-//  RTM Client
-//
-//  Created by Bartosz Rachwal on 7/1/15.
-//  Copyright (c) 2015 The National Institute of Advanced Industrial Science and Technology, Japan. All rights reserved.
-//
+//  Copyright (c) 2015-2016. Bartosz Rachwal. The National Institute of Advanced Industrial Science and Technology, Japan. All rights reserved.
 
 import Foundation
 
@@ -24,13 +18,18 @@ public class RTMRequestFactory: NSObject, RequestFactory {
         let urlString = configuration.baseURL + method
         if let url = NSURL(string: urlString) {
             let request = NSMutableURLRequest(URL: url)
-            var jsonifyError: NSError? = nil
-
-            request.HTTPMethod = "POST"
-            request.addValue("application/json", forHTTPHeaderField: "Accept")
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.HTTPBody = NSJSONSerialization.dataWithJSONObject(jsonBody, options: nil, error: &jsonifyError)
-            return request
+     
+            do{
+                request.HTTPMethod = "POST"
+                request.addValue("application/json", forHTTPHeaderField: "Accept")
+                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(jsonBody, options: NSJSONWritingOptions())
+                return request
+            }
+            catch
+            {
+                return nil
+            }
         }
         return nil
     }

@@ -1,10 +1,4 @@
-//
-//  RTMCamera.swift
-//  RTM Client
-//
-//  Created by Bartosz Rachwal on 7/1/15.
-//  Copyright (c) 2015 The National Institute of Advanced Industrial Science and Technology, Japan. All rights reserved.
-//
+//  Copyright (c) 2015-2016. Bartosz Rachwal. The National Institute of Advanced Industrial Science and Technology, Japan. All rights reserved.
 
 import UIKit
 import AVFoundation
@@ -28,7 +22,7 @@ class RTMCamera: NSObject, Camera, AVCaptureVideoDataOutputSampleBufferDelegate 
         self.sessionQueue = dispatch_queue_create("session queue", DISPATCH_QUEUE_SERIAL)
         self.session = AVCaptureSession()
         super.init()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "startStreaming", name: "RTMClient.DidBecomeActive", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RTMCamera.startStreaming), name: "RTMClient.DidBecomeActive", object: nil)
     }
 
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
@@ -43,7 +37,7 @@ class RTMCamera: NSObject, Camera, AVCaptureVideoDataOutputSampleBufferDelegate 
 
         self.client.postImage(encodedImage) {
             response in
-            if let statusOk = response {
+            if response != nil {
                 if let handler = self.newFrame {
                     dispatch_async(dispatch_get_main_queue()) {
                         handler()
@@ -65,16 +59,19 @@ class RTMCamera: NSObject, Camera, AVCaptureVideoDataOutputSampleBufferDelegate 
                         self.session?.beginConfiguration()
                         self.session?.sessionPreset = self.configuration.preset
 
-                        var devicePoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
+                        let devicePoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
 
                         self.setFocusAndExposure(AVCaptureFocusMode.ContinuousAutoFocus, exposureMode: AVCaptureExposureMode.ContinuousAutoExposure, point: devicePoint, monitorSubjectAreaChange: false)
 
-                        var error: NSError? = nil
-
-                        var videoDeviceInput: AVCaptureDeviceInput? = AVCaptureDeviceInput(device: videoDevice, error: &error)
-
-                        if (error != nil) {
-                            println(error)
+                        var videoDeviceInput: AVCaptureDeviceInput? = nil;
+                        
+                        do
+                        {
+                            videoDeviceInput = try AVCaptureDeviceInput(device: videoDevice)
+                        }
+                        catch
+                        {
+                            print("RTMCamera::initialize::AVCaptureDeviceInput")
                         }
 
                         if self.session!.canAddInput(videoDeviceInput) {
@@ -82,8 +79,8 @@ class RTMCamera: NSObject, Camera, AVCaptureVideoDataOutputSampleBufferDelegate 
                             self.videoDeviceInput = videoDeviceInput
                         }
 
-                        var videoDataOutput: AVCaptureVideoDataOutput = AVCaptureVideoDataOutput()
-                        videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey: kCVPixelFormatType_32BGRA]
+                        let videoDataOutput: AVCaptureVideoDataOutput = AVCaptureVideoDataOutput()
+                        videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey: NSNumber(unsignedInt: kCVPixelFormatType_32BGRA)]
                         videoDataOutput.setSampleBufferDelegate(self, queue: self.sessionQueue)
                         videoDataOutput.alwaysDiscardsLateVideoFrames = true
 
@@ -100,9 +97,9 @@ class RTMCamera: NSObject, Camera, AVCaptureVideoDataOutputSampleBufferDelegate 
 
     private func deviceWithMediaType(mediaType: String, preferringPosition: AVCaptureDevicePosition) -> AVCaptureDevice? {
 
-        var devices = AVCaptureDevice.devicesWithMediaType(mediaType)
+        let devices = AVCaptureDevice.devicesWithMediaType(mediaType)
         var selectedDevice: AVCaptureDevice? = nil
-        if let captureDevice: AVCaptureDevice = devices.first as? AVCaptureDevice {
+        if let _: AVCaptureDevice = devices.first as? AVCaptureDevice {
             for device in devices {
                 if device.position == preferringPosition {
                     selectedDevice = device as? AVCaptureDevice
@@ -116,11 +113,8 @@ class RTMCamera: NSObject, Camera, AVCaptureVideoDataOutputSampleBufferDelegate 
     func beginSession() {
         if let sessionQ = sessionQueue {
             dispatch_async(sessionQ, {
-                self.addObserver(self, forKeyPath: "sessionRunningAndDeviceAuthorized", options: NSKeyValueObservingOptions.Old | NSKeyValueObservingOptions.New, context: &self.SessionRunningAndDeviceAuthorizedContext)
-
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: "subjectAreaDidChange:", name: AVCaptureDeviceSubjectAreaDidChangeNotification, object: self.videoDeviceInput?.device)
-
-                self.runtimeErrorHandlingObserver = NSNotificationCenter.defaultCenter().addObserverForName(AVCaptureSessionRuntimeErrorNotification, object: self.session, queue: nil, usingBlock: {
+                self.addObserver(self, forKeyPath: "sessionRunningAndDeviceAuthorized", options: [.Old , .New], context: &self.SessionRunningAndDeviceAuthorizedContext)
+                    self.runtimeErrorHandlingObserver = NSNotificationCenter.defaultCenter().addObserverForName(AVCaptureSessionRuntimeErrorNotification, object: self.session, queue: nil, usingBlock: {
                     (note: NSNotification?) in
                     dispatch_async(sessionQ, {
                         if let sess = self.session {
@@ -162,7 +156,7 @@ class RTMCamera: NSObject, Camera, AVCaptureVideoDataOutputSampleBufferDelegate 
         if configuration.streaming {
             self.client.checkConnection() {
                 message in
-                if let statusOk = message {
+                if message != nil {
                     self.start()
                     self.configuration.streaming = true
                 } else {
@@ -173,7 +167,7 @@ class RTMCamera: NSObject, Camera, AVCaptureVideoDataOutputSampleBufferDelegate 
     }
 
     func checkAuthorizationStatus(completion: (Bool) -> Void) {
-        var mediaType: String = AVMediaTypeVideo
+        let mediaType: String = AVMediaTypeVideo
         AVCaptureDevice.requestAccessForMediaType(mediaType, completionHandler: {
             granted in
             completion(granted)
@@ -203,29 +197,32 @@ class RTMCamera: NSObject, Camera, AVCaptureVideoDataOutputSampleBufferDelegate 
                     return
                 }
 
-                var currentVideoDevice: AVCaptureDevice = self.videoDeviceInput!.device
-
                 if let device: AVCaptureDevice = self.deviceWithMediaType(AVMediaTypeVideo, preferringPosition: preferredPosition) {
-                    var devicePoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
+                    let devicePoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
 
                     self.setFocusAndExposure(AVCaptureFocusMode.ContinuousAutoFocus, exposureMode: AVCaptureExposureMode.ContinuousAutoExposure, point: devicePoint, monitorSubjectAreaChange: false)
+                    do
+                    {
+                        let videoDeviceInput: AVCaptureDeviceInput = try AVCaptureDeviceInput(device: device)
 
-                    var videoDeviceInput: AVCaptureDeviceInput = AVCaptureDeviceInput(device: device, error: nil)
+                        self.session!.beginConfiguration()
 
-                    self.session!.beginConfiguration()
+                        self.session!.removeInput(self.videoDeviceInput)
 
-                    self.session!.removeInput(self.videoDeviceInput)
+                        if self.session!.canAddInput(videoDeviceInput) {
 
-                    if self.session!.canAddInput(videoDeviceInput) {
-
-                        self.session!.addInput(videoDeviceInput)
-                        self.videoDeviceInput = videoDeviceInput
+                            self.session!.addInput(videoDeviceInput)
+                            self.videoDeviceInput = videoDeviceInput
 
                     } else {
                         self.session!.addInput(self.videoDeviceInput)
                     }
 
                     self.session!.commitConfiguration()
+                    }
+                    catch {
+                        return
+                    }
                 }
             })
         }
@@ -233,23 +230,29 @@ class RTMCamera: NSObject, Camera, AVCaptureVideoDataOutputSampleBufferDelegate 
 
     private func setFocusAndExposure(focusMode: AVCaptureFocusMode, exposureMode: AVCaptureExposureMode, point: CGPoint, monitorSubjectAreaChange: Bool) {
         dispatch_async(self.sessionQueue!, {
-            var device: AVCaptureDevice! = self.videoDeviceInput!.device
-            var error: NSError? = nil
+            let device: AVCaptureDevice! = self.videoDeviceInput!.device
 
-            if device.lockForConfiguration(&error) {
+            do
+            {
+                try device.lockForConfiguration()
+                
                 if device.focusPointOfInterestSupported && device.isFocusModeSupported(focusMode) {
                     device.focusMode = focusMode
                     device.focusPointOfInterest = point
                 }
+                
                 if device.exposurePointOfInterestSupported && device.isExposureModeSupported(exposureMode) {
                     device.exposurePointOfInterest = point
                     device.exposureMode = exposureMode
                 }
                 device.subjectAreaChangeMonitoringEnabled = monitorSubjectAreaChange
                 device.unlockForConfiguration()
-            } else {
-                println(error)
             }
+            catch
+            {
+                print("RTMCamera::initialize::AVCaptureDeviceInput")
+            }
+            
         })
     }
 }
